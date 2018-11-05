@@ -14,8 +14,12 @@ class AnimalPresenter(private val view: AnimalContract.View,
             }
 
             override fun onError(exception: Exception) {
-                view.showToast(exception.message)
+                view.showMessage(exception.message!!)
             }
         })
+    }
+
+    override fun clickedItem(animal: Animal) {
+        view.showMessage(animal.sound)
     }
 }

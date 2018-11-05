@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity(), ViewAdapter.AnimalTouchListener, Anima
     }
 
     override fun onItemClicked(animal: Animal, view: View) {
-        Toast.makeText(this, animal.sound, Toast.LENGTH_SHORT).show()
+        presenter.clickedItem(animal)
     }
 
     override fun showAnimalList(responseList: List<Animal>) {
@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity(), ViewAdapter.AnimalTouchListener, Anima
         adapter.notifyDataSetChanged()
     }
 
-    override fun showToast(message: String?) {
+    override fun showMessage(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

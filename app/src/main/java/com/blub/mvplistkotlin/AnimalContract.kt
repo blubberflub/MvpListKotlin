@@ -6,10 +6,11 @@ interface AnimalContract {
 
     interface View {
         fun showAnimalList(responseList: List<Animal>)
-        fun showToast(message: String?)
+        fun showMessage(message: String)
     }
 
     interface UserActionListener {
         fun start()
+        fun clickedItem(animal: Animal)
     }
 }
